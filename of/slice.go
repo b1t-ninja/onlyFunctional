@@ -111,3 +111,13 @@ func Head[K any](collection []K) K {
 func Tail[K any](collection []K) K {
 	return collection[len(collection)-1]
 }
+
+func Zip[K any, R any](collection1 []K, collection2 []R, transformer func(K, R) K) []K {
+	var result []K
+
+	for i := 0; i < len(collection1); i++ {
+		result = append(result, transformer(collection1[i], collection2[i]))
+	}
+
+	return result
+}
