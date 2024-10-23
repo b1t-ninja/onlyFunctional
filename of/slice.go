@@ -13,8 +13,8 @@ func Map[K any](collection []K, transformer func(K) K) []K {
 func MapWithIndex[K any](collection []K, transformer func(int, K) K) []K {
 	var result []K
 
-	for i, elememt := range collection {
-		result = append(result, transformer(i, elememt))
+	for i, element := range collection {
+		result = append(result, transformer(i, element))
 	}
 
 	return result
