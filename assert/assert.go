@@ -37,3 +37,15 @@ func NotEqual(a interface{}, b interface{}, message string) {
 		log.Fatal(message)
 	}
 }
+
+func Empty(value interface{}, message string) {
+	if len(value.([]byte)) != 0 {
+		log.Fatal(message)
+	}
+}
+
+func NotEmpty(value interface{}, message string) {
+	if len(value.([]byte)) == 0 {
+		log.Fatal(message)
+	}
+}
